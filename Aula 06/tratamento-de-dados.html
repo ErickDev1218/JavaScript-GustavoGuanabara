@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados</title>
+</head>
+<body>
+    <h1>Olá mundo</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+    /*
+            Tratamento de dados
+
+    var nome = window.prompt('Qual é seu nome?')
+    alert('É um prazer te conhecer, ' + nome + '!')
+    
+   
+    No JS o sinal '+' serve para adição e para CONCATENAÇÃO. Segue o diferencial entre as mesmas.
+
+    (number + number) para adição
+    (string + string) para concatenação
+
+    var n1 = window.prompt('Digite um número')
+    var n2 = window.prompt('Digite outro número')
+    var s = n1 + n2
+    alert('O resultado é ' + s)
+    
+    O código acima está concatenando os valores pois o '.prompt' SEMPRE irá receber um valor STRING (é uma caracteristica do comando).
+
+    Neste caso, surge a necessidade de converter o tipo desse dado. Neste caso, de STRING -> NUMBER.
+
+        Conversão String -> Number
+    
+    Portanto, devemos usar:
+    Number.parseInt(n1) -> para valores INTEIROS
+    Number.parseFloat(n1) -> para valores REAIS
+
+    var n1 = Number.parseInt(window.prompt('Digite um número'))
+    var n2 = Number.parseInt(window.prompt('Digite outro número'))
+    var s = n1 + n2
+    alert('O resultado é ' + s)
+
+    Nas versões mais atuais, pode-se utilizar apenas do 'Number(n1)'. Assim, não será necessarios preocupação se o número será INTEIRO ou REAL.
+
+    var n1 = Number(window.prompt('Digite um número'))
+    var n2 = Number(window.prompt('Digite outro número'))
+    var s = n1 + n2
+    alert('O resultado é ' + s)
+
+    Importante entender a sua necessidade. Caso necessite de um número INTEIRO ou REAL sempre, utilize o metodo 'Number.parseInt(n1)' e 'Number.parseFloat(n1)' respectivamente.
+
+        Conversão Number -> String
+
+    Para converter um número para uma STRING há duas maneiras bem simples.
+
+    String(n1)
+    n1.toString()
+    
+    Segue exemplos:
+    
+    var n1 = String(window.prompt('Digite um número'))
+
+    var n1 = window.prompt('Digite um número').toString()
+
+        Formatando Strings
+
+    var s ='JavaScript'
+    
+    'Eu estou estudando s' -> NÃO faz interpolação
+
+    'Eu estou estudando ' + s -> usa CONCATENAÇÃO
+
+    A partir da forma de concatenação, surge outras formas de se utilizar uma STRING. Usaremos o metodo de TEMPLATE STRING.
+
+    `Eu estou estudando ${s}`
+    
+    var n1 = Number(window.prompt('Digite um número'))
+    var n2 = Number(window.prompt('Digite outro número'))
+    var s = n1 + n2
+    alert(`O resultado entre ${n1} e ${n2} é ${s}`)
+
+    Algumas outras coisas que posso usar com STRINGS.
+    
+    var s ='JavaScript'
+
+    1 ->  s.lenght -> quantos caracteres a string tem.
+    
+    var nome = window.prompt('Qual seu nome?')
+    document.write(`Seu nome tem ${nome.length} letras`)
+
+    2 -> s.toUpperCase() -> tudo para maiusculo
+    
+    document.write(`Seu nome é ${nome}! Em maiusculo é ${nome.toUpperCase()} <br>`)
+
+    3 -> s.toLoweCase() -> tudo para minusculo
+
+    document.write(`Seu nome é ${nome}! Em minusculo é ${nome.toLowerCase()}`)
+
+        Formatando números
+
+    Se eu declarar uma variável como 'var n1 = 1545.5' e precisar que essa variável tenha duas ou mais casas após a virgula, devo usar:
+
+    n1.toFixed(2)
+
+    Para trocar o ponto de '1545.5' para uma virgula, devo usar:
+
+    n1.toFixed(2).replace('.' , ',')
+
+    Para que eu mostrar este mesmo número usando em forma de cotação de moedas, devo usar: 
+
+    n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) 
+
+
+    */
+    
+    
+    </script>
+</body>
+</html>
