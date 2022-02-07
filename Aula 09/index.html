@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo ai usar o <strong>DOM</strong> em JavaScript</p>
+    <div class="mud">Clique em mim</div>
+
+    <script>
+    /*
+        DOM -> Document Object Model
+        
+    É um conjunto de objetos dentro do meu navegador que dará acesso a objetos dentro do meu site. Não funciona no Node.
+
+    A árvore DOM ela começa da raiz (dentro do navegador) chamamos de window.
+    A window se divide em 3, sendo location, document e history.
+
+    Location diz a localização do meu site, a URL, qual a paginal atual, a anterior...
+
+    O document é o documento atual.
+    Dentro de document está o HTML.
+    Dentro de HTML eu tenho head e body.
+    Dentro de head eu tenho meta e title.
+    Dentro de body eu tenho h1, p, p e div.
+    Dentro do segundo p, eu tenho um strong.
+
+    O history vai guardando de onde você veio e pra onde você vai, facilitando a navegação no site.
+
+    Isto explica a árvore do DOM, em caso de dúvidas, pesquisar por imagem em meu grupo -> Arvore DOM.*/
+
+    /*
+    Estes elementos DENTRO da árvore DOM podem ser selecionados por Marca (tag), por ID, por Name, por Classe e por seletor(como no CSS).
+
+    Selecionando por marca:
+    getElementsByTagName -> pegue o elemento pelo nome da tag.
+    Atenção, pois este seletor aparece no PLURAL, fazendo necessário utilizarmos do [] para referenciar de quem exatamente estamos falando. Está contagem para dentro do [] começa do 0.
+    
+
+    var p1 = window.document.getElementsByTagName('p') [1]
+    p1.style.background ='blue'
+    window.document.write(`Está escrito assim: ${p1.innerText}`)
+    
+    Mas desta forma, eu não consigo trazer a tag 'strong' que está dentro da tag 'p'. Por isso utilizamos da seguinte forma: 
+    
+    var p1 = window.document.getElementsByTagName('p') [1]
+    p1.style.background ='blue'
+    window.document.write(`Está escrito assim: ${p1.innerHTML}`)
+    
+    Selecionando por ID:
+    Para selecionar por ID, eu preciso primeiramente ir ao meu HTML e da um id à alguma tag. Como foi feito na div.
+    
+    <div id="div1">Clique em mim</div>
+    
+    var d = window.document.getElementById('div1')
+    d.style.background = 'green'
+    d.innerText = 'Mudei está div usando ID'
+
+    Selecionando por name:
+    Seleção por name é bem parecida com a seleção por ID.
+    Atenção, pois este seletor aparece no PLURAL, fazendo necessário utilizarmos do [] para referenciar de quem exatamente estamos falando. Está contagem para dentro do [] começa do 0.
+
+    <div name="div1">Clique em mim</div>
+    
+    var d = document.getElementsByName('div1')[0]
+    d.style.background = 'purple'
+    d.innerText = "Mudei este texto por 'name'"
+
+    Selecionando por class:
+    Segue a mesma lógica dos seletores ID e Name.
+    Atenção, pois este seletor aparece no PLURAL, fazendo necessário utilizarmos do [] para referenciar de quem exatamente estamos falando. Está contagem para dentro do [] começa do 0.
+
+    <div class="div1">Clique em mim</div>
+    var d = document.getElementsByClassName('div1')[0]
+    d.style.background = 'purple'
+
+    Selecionando por seletor:
+    Está é a forma que utiliza os seletores do CSS. Diferente das outras formas teremos 'querySelector()' para singular e 'querySelectorAll()' para plura.
+    Já que está sintaxe é de fato como no CSS preciso relembrar algumas coisas. No CSS para fazer referencia à algum ID, eu sempre uso '#' e para fazer referencia à alguma class, eu sempre uso '.'   
+
+    Portanto para ID:
+    
+    <div id="div1">Clique em mim</div>
+    
+    var d = window.document.querySelector('div#mud')
+    d.innerText = 'Mudei este texto usando querySelector'
+    
+    E para class:
+
+    var d = window.document.querySelector('div.mud')
+    d.innerText = 'Mudei este texto usando querySelector'
+
+    */
+    
+    var d = window.document.querySelector('div.mud')
+    d.innerText = 'Mudei este texto usando querySelector'
+    
+    
+    </script>
+</body>
+</html>
