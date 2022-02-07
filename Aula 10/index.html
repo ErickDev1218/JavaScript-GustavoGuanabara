@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos do DOM</title>
+    <style>
+        div#area{
+            font: normal 18pt Arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id='area'>
+        Interaja...
+    </div>
+
+    <script>
+        /*
+            
+            Eventos DOM
+        
+        Os eventos DOM são qualquer evento que possa acontecer com determinada área, neste exercicio, trabalharemos com a <DIV>.
+        Caso eu coloque o mouse em cima da DIV, acontecerá o 'mouseenter'. Caso eu mova o mouse, acontecerá o 'mousemove'. Caso eu clique e mantenha pressionado, acontecerá o 'mousedown'. Caso eu solte o mesmo clique, acontecerá o 'mouseup'. E em um movimento rápido de clique, acontecerá o 'click'. Quando eu tirar o mouse de dentro da DIV, acontecerá o 'mouseout'.
+        Para disparar um evento, precisamos entender o que é uma função.
+            
+            Função
+        
+        Função em JS é um conjunto de código que vão ser executadas só quando o evento ocorrer.
+        Imagine que uma <div> tenha 10 linhas de blocos que só irão entrar em ação após um evento como o 'click'.
+        Para eu executar esse evento somente quando o evento acontecer, o primeiro passo é coloca-lo dentro de um bloco. O bloco é sinalizado entre os sinais de {}.
+
+        {
+            <div> olá mundo </div>
+        }
+
+        Este bloco precisa ser nomeado e para funções são sempre nomeados como function.
+
+        function {
+            <div> olá mundo </div>
+        }
+
+        E para ocorrer o evento, deve-se colocar o nome do evento logo em seguida de 'function'.
+
+        function ação(){
+            <div> olá mundo </div>
+        }
+
+        Dentro dos () da ação, podem ser colocados parametros, podendo ser apenas 1 ou vários.
+
+        function ação(param){
+            <div> olá mundo </div>
+        }
+        
+        Os eventos eles podem ser configurados na parte HTML ou JS, segue as duas maneiras.
+
+        No HTML:
+
+        Devo primeiro configurar minha tag para prepara-la.
+
+        <div id='area' onclick='clicar()'>
+        Interaja...
+        </div>
+        
+        Após isso, vou ao script e crio a função.
+
+        function clicar(){
+            var a = window.document.getElementById('area')
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+        O comando que disposto acima só será executado após o clique.
+
+        Nesta mesma função, eu posso colocar mais coisas, como por exemplo:
+        
+        Primeiro, prepararo a DIV
+
+        <div id='area' onclick='clicar()' onmouseenter = 'entrar()'>
+        Interaja...
+        </div>
+        
+        E então, partiria novamente para o script
+        
+        function clicar() {
+            var a = window.document.getElementById('area')
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+
+        function entrar(){
+            var b = window.document.getElementById('area')
+            a.style.background = 'purple'
+            a.innerText = 'Tá com o mouse em cima!'
+        }
+
+        Segue o exemplo completo:
+        
+        <div id='area' onclick="clicar()" onmouseenter="entrar()" onmouseleave="saiu()">
+        Interaja...
+        </div>
+
+        function clicar() {
+            var a = window.document.getElementById('area')
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+
+        function entrar(){
+            var b = window.document.getElementById('area')
+            b.innerText = 'Entrou'
+        }
+
+        function saiu(){
+            var c = window.document.getElementById('area')
+            c.innerText = 'Saiu!'
+            c.style.background = 'green'
+        }
+
+
+        No JavaScript:
+        
+        Para meu HTML não ficar muito poluído eu posso configurar tudo a partir do meu JS, dentro da tag script, vê só.
+
+        Primeiro, eu adiciono uma lista de eventos à uma variável fora do escopo da função, criando assim, uma variável global.
+
+        var a = window.document.getElementById ('area')
+
+        Após isso, eu entro com a lista de eventos.
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', saiu)
+        
+        Na lista de eventos é importante se atentar que entre os () vem sempre entre aspas a ação/evento e em seguida, fora das aspas vem o nome da função que foi selecionada por mim. Nos exemplos acima -> clicar, entrar, saiu.
+
+        Depois de criar a lista de eventos, eu crio de fato as funções.
+        
+        function clicar() {
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+
+        function entrar(){
+            a.innerText = 'Entrou'
+        }
+
+        function saiu(){
+            a.innerText = 'Sair!'
+            a.style.background = 'green'
+        }
+
+        */
+        
+        
+        var a = window.document.getElementById('area')
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', saiu)
+        
+        function clicar() {
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+
+        function entrar(){
+            a.innerText = 'Entrou'
+        }
+
+        function saiu(){
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
