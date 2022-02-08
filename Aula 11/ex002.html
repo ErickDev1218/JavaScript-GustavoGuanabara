@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Onde você nasceu?</h1>
+    <p>Nós estamos no Brasil e precisamos saber da sua nacionalidade para que possamos saber se você é brasileiro ou estrangeiro.</p>
+    <p>Onde você nasceu? 
+        <input type="text" name="nac" id="nac"> <input type="button" value="Ir !" onclick="buscar()">
+    </p>
+    <div id="nacionalidade">
+
+    </div>
+
+    <script>
+    var nasceu = document.querySelector('input#nac')
+    var nacionalidade = document.querySelector('div#nacionalidade')
+
+    function buscar(){
+        if(nasceu.value == 'Brasil'){
+            nacionalidade.innerHTML = `<p>Morando no <strong>${nasceu.value}</strong>, você é <strong>BRASILEIRO</strong>`
+        } else{
+            nacionalidade.innerHTML = `<p>Morando em <strong>${nasceu.value}</strong>, você é <strong>ESTRANGEIRO</strong>`
+        }
+    }
+    </script>
+</body>
+</html>
