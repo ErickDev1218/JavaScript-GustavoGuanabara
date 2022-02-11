@@ -21,7 +21,7 @@
     var nacionalidade = document.querySelector('div#nacionalidade')
 
     function buscar(){
-        if(nasceu.value = 'Brasil'){
+        if(nasceu.value == 'Brasil'){
             nacionalidade.innerHTML = `<p>Morando no <strong>${nasceu.value}</strong>, você é <strong>BRASILEIRO</strong>`
         } else{
             nacionalidade.innerHTML = `<p>Morando em <strong>${nasceu.value}</strong>, você é <strong>ESTRANGEIRO</strong>`

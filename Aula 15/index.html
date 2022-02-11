@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis compostas</title>
+</head>
+<body>
+    <script>
+        /*
+            Variáveis compostas
+        
+        Primeiro, é bom relembrar as variáveis simples, sendo elas, variáveis capazes de armazenar apenas UM VALOR por vez.
+        
+        Diferente das variáveis compostas que devem ser capazes de armazenar vários valores em uma mesma estrutura. Segue exemplo prático:
+
+        let a = [1, 2, 3, 4, 5, 6]
+        console.log(a)
+
+        O código acima, apresentaria no console [1, 2, 3, 4, 5, 6]. Mas, entendemos que dentro de uma variável composta ou vetor, existem alguns parametros em sua composição, sendo eles:
+
+        'a' -> a variável sem si, do tipo composta, ou seja, um Array/Vetor
+
+        '[]' -> o elemento de um vetor é um par que agrupa o espaço da memoria, o valor colocado dentro dele e o indice.
+        
+        '[8, 2, 7, 5, 9, 0]' -> os conteúdos de cada elemento dipostos. No indice essa contagem inicia sempre no 0, caso eu queira buscar um valor especifico, começa sempre do 0, por exemplo: '[8(0), 2(1), 7(2), 5(3), 9(4), 0(5)]'
+        
+        Segue um exemplo prático:
+        
+        let a = [1, 2, 3, 4, 5, 6]
+        console.log(a[3])
+
+        O código acima mostraria '4', que, pelo seu indice, ocupa o 3º espaço.
+
+        Agora imagine que voce tem o vetor:
+
+        let a = [1, 2, 3, 4, 5, 6]
+
+        Mas você queira adicionar algum valor a mais, sem mexer diretamente na variável.
+        Basta usar o:
+
+        a[6] = 7
+
+        Neste caso, o '[6]' é o indice que será colocado o número 7, mesmo que esse indice nao exista, o JS cria ele e põe o número 7. Neste caso ficaria assim:
+
+        let a = [1, 2, 3, 4, 5, 6]
+        a[6] = 7
+        let a = [1, 2, 3, 4, 5, 6, 7]
+
+        Agora, caso eu queira adicionar algum valor, sem mexer na variável e nem se preocupar com a posição no indice, basta usar o :
+
+        a.push(7)
+
+        Desta forma, o JS vai posicionar o valor dispoto entre '()' sempre em ultimo lugar no indice, mesmo que esse indice não exista, ele mesmo o criará.
+
+
+        Caso eu queira saber o comprimento de um Array, contando a quantidade de elementos que tem dentro dele, basta eu usar o:
+
+        let a = [1, 2, 3, 4, 5, 6]
+        console.log(a.length)
+
+        Desta forma, o resultado é '6'.
+
+        Agora imagine que voce tem um Array todo bagunçado, desta forma: 
+
+        let a = [6, 7, 4, 3, 1, 2]
+
+        Para que eu coloque eles em ordem, basta usar o:
+
+        let a = [6, 7, 4, 3, 1, 2]
+        a.sort()
+
+        Este comando, põe os valores em ordem, alterando os seus indices. Nota que esse comando põe em ordem apenas os primeiros valores, por exemplo:
+
+        let a = [600, 7, 4, 3, 1, 2]
+        a.sort()
+        console.log(a)
+
+        O resultado seria : [ 1, 2, 3, 4, 600, 7 ].
+
+
+        Agora imagine que voce tem um Array com MUITOS elementos e precisa saber qual valor está em cada indice.
+        O jeito mais 'fácil' seria:
+        
+        let a = [6, 7, 4, 3, 1, 2]
+        console.log(a[1])
+        console.log(a[2])
+        console.log(a[3])
+        console.log(a[4])
+        console.log(a[5])
+        console.log(a[6])
+
+        Em uma situação que eu tenha poucos indices, talvez até seja eficaz, mas e em situações que eu tenha 100 ou 200 indices?
+        Desta forma vamos utilizar a propriedade 'for', vista na aula passada.
+
+        let a = [6, 7, 4, 3, 1, 2]
+        for(let posicao=0; posicao<a.length; posicao++){
+            console.log(`A posição ${posicao} tem valor ${a[posicao]}`)
+        }
+
+        Esta forma disposta acima, é o código tradicional dos vetores, mas nas versões mais recentes do ECMASCRIPT tem um jeito mais simplificado para fazer isso.
+        Vamos criar uma estrutura ainda não vista até o momento.
+
+        for(   in   ){
+            console.log()
+        }
+
+        No primeiro espaço eu devo colocar a variável criada acima.
+
+        for(let posicao in    ){
+            console.log()
+        }
+
+        No segundo espaço eu devo colocar o nome da variável composta.
+
+        for(let posicao in a ){
+            console.log(a[posicao])
+        }
+
+        Agora, como leriamos isso?
+        Para cada posição dentro de 'a', eu vou mostrar o a[posicao]
+
+        Lembrando que essa forma do 'for' só funciona para Array e Objestos.
+
+
+        Para buscar valores dentro dos vetores, basta usar:
+
+        let a = [6, 7, 4, 3, 1, 2]
+        a.indexOf(7)
+
+        Esse código me retorna o indice de onde o valor '7' se encontra.
+        Caso o valor nao exista em alguma indice, o retorno será '-1'
+
+        let a = [6, 7, 4, 3, 1, 2]
+        let pos = a.indexOf(1)
+        if(pos == -1){
+        console.log('O valor não foi encontrado!')
+        } else{
+        console.log(`O valor está na posição ${pos}`)
+        }
+        */
+    </script>
+</body>
+</html>
