@@ -1,7 +1,9 @@
-let a = [6, 7, 4, 3, 1, 2]
-let pos = a.indexOf(1)
-    if(pos == -1){
-        console.log('O valor não foi encontrado!')
-    } else{
-        console.log(`O valor está na posição ${pos}`)
-    }
+let a = ['azul','preto','amarelo']
+
+let b = (a[2])
+if (b == 'preto'){
+    console.log(`O céu está ${b}, então está a noite.`)
+}else if(b == 'azul'){
+    console.log(`O céu está ${b}, então está de manhã.`)
+} else{
+    console.log(`O céu está ${b}, então está a tarde.`)}

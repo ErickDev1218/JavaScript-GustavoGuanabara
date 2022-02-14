@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções em JS!</title>
+</head>
+<body>
+    <script>
+    /*
+        Funções em JS
+
+    Funções são AÇÕES executadas assim que são CHAMADAS ou em decorrência de algum EVENTO.
+
+    Uma função PODE receber PARÂMETROS e retornar um RESULTADO. Já vimos algo parecido se não me engano na aula 10.
+
+    É muito importante para uma função entender que para que a mesma funcione, eu preciso criar uma chamada, e saber trabalhar com o valor que essa função irá me retornar, usando normalmente o conceito de variável.
+
+    function ação(parâmetro){
+        return res
+    }
+
+    ação(5)
+    
+
+    Segue um exemplo prático:
+
+    function parimp(n){
+    if(n%2==0){
+        return 'par'
+    }else{
+        return 'impar'
+    }
+    }
+    let res = parimp(11)
+    console.log(`O resultado é ${res}`)
+    
+    Lembrando que, uma função em JS, só pode ter um retorno.
+    
+    Agora imagine que você precisa criar uma função que envolva dois parâmetros.
+
+    function soma(n1,n2){
+        return n1 + n2
+    }
+
+    let res = soma(2,5)
+    console.log(`O resultado é ${res}`)
+    
+    Os valores dispostos dentro da chamada são posicionadas nos parâmetros de forma respectiva. Portanto ficaria 2 + 5 = 7.
+
+    E o que aconteceria se eu colocasse apenas um valor dentro da chamada?
+
+    function soma(n1,n2){
+        return n1 + n2
+    }
+
+    let res = soma(2)
+    console.log(`O resultado é ${res}`)
+
+    O retorno dessa função seria 'NaN', pois um dos valores está como undefined.
+
+    Caso eu queira dizer "olha, se na chamada não tiver nenhum valor, assuma tal valor" eu devo usar da seguinte forma:
+
+    function soma(n1,n2=5){
+        return n1 + n2
+    }
+
+    let res = soma(2)
+    console.log(`O resultado é ${res}`)
+
+    Desta forma, o retorno seria 7, pois o JS olhou a chamada, viu que nao tinha nenhum valor para 'n2', logo em seguida, ele leu 'n2=5' dentro dos parâmetros e entendeu como 'se não tiver nenhum valor definido no chamado, ele será igual a 5'
+
+    Também é possivel associar variáveis a funções de forma mais rápida e prática.
+
+    let res = function(x) {
+    return x*2
+    }
+
+    console.log(res(5))
+    */
+    </script>
+</body>
+</html>
